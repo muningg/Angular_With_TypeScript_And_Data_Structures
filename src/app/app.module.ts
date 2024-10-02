@@ -9,6 +9,7 @@ import { routes } from './app.routes';
 import { StudentListComponent } from './components/student-list/student-list.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { FruitListComponent } from './components/fruit-list/fruit-list.component';
+import { CourseListComponent } from './components/course-list/course-list.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { FruitListComponent } from './components/fruit-list/fruit-list.component
     AppComponent,
     StudentListComponent,
     EmployeeListComponent,
-    FruitListComponent
+    FruitListComponent,
+    CourseListComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
