@@ -1,0 +1,10 @@
+<p>Student List</p>
+<input type="text" class="form-control" [(ngModel)]="newStudent" placeholder="Add a student" />
+
+<button class="btn btn-primary mt-2" (click)="addStudent()">Add Student</button>
+
+<ul class="mt-3 list-group">
+  <li class="list-group-item" *ngFor="let student of students">
+    {{student}}
+  </li>
+</ul>
