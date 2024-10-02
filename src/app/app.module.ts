@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
 import { StudentListComponent } from './components/student-list/student-list.component';
+import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { StudentListComponent } from './components/student-list/student-list.com
   ],
   declarations: [
     AppComponent,
-    StudentListComponent
+    StudentListComponent,
+    EmployeeListComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
