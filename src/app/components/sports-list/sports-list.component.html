@@ -1,0 +1,11 @@
+<p>12. Sports List</p>
+<input type="text" class="form-control" [(ngModel)]="newSports" placeholder="Add a sport" />
+
+<button class="btn btn-primary mt-2" (click)="addSport()">Add Sport</button>
+
+<ul class="mt-3 list-group">
+  <li class="list-group-item" *ngFor="let sport of sports">
+    {{sport}}
+  </li>
+</ul>
+
