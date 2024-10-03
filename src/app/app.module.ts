@@ -16,6 +16,7 @@ import { MovieListComponent } from './components/movie-list/movie-list.component
 import { CarModelListComponent } from './components/car-model-list/car-model-list.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { SubjectListComponent } from './components/subject-list/subject-list.component';
+import { CountryListComponent } from './components/country-list/country-list.component';
 
 @NgModule({
   imports: [
@@ -37,6 +38,7 @@ import { SubjectListComponent } from './components/subject-list/subject-list.com
     CarModelListComponent,
     ProductListComponent,
     SubjectListComponent,
+    CountryListComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
