@@ -1,0 +1,11 @@
+<p>44. Budget List</p>
+<input type="text" class="form-control" [(ngModel)]="newBudget" placeholder="Add a budget" />
+
+<button class="btn btn-primary mt-2" (click)="addBudget()">Add Budget</button>
+
+<ul class="mt-3 list-group">
+  <li class="list-group-item" *ngFor="let budget of budgets">
+    {{budget}}
+  </li>
+</ul>
+
