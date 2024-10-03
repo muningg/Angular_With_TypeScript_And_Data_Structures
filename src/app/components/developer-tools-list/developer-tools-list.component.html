@@ -1,0 +1,13 @@
+<p>48. Developer Tools List</p>
+<input type="text" class="form-control" [(ngModel)]="newDeveloperTool" placeholder="Add a developer tool" />
+
+<button class="btn btn-primary mt-2" (click)="addDeveloperTool()">Add Developer Tool</button>
+
+<ul class="mt-3 list-group">
+  <li class="list-group-item" *ngFor="let tool of developerTools">
+    {{tool}}
+  </li>
+</ul>
+
+
+
