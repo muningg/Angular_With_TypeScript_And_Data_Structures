@@ -47,6 +47,7 @@ import { PaintingListComponent } from './components/painting-list/painting-list.
 import { ArtistListComponent } from './components/artist-list/artist-list.component';
 import { ComposerListComponent } from './components/composer-list/composer-list.component';
 import { PodcastListComponent } from './components/podcast-list/podcast-list.component';
+import { ExerciseListComponent } from './components/exercise-list/exercise-list.component';
 
 @NgModule({
   imports: [
@@ -99,6 +100,7 @@ import { PodcastListComponent } from './components/podcast-list/podcast-list.com
     ArtistListComponent,
     ComposerListComponent,
     PodcastListComponent,
+    ExerciseListComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
