@@ -1,0 +1,11 @@
+<p>26. Stationery List</p>
+<input type="text" class="form-control" [(ngModel)]="newStationeryItem" placeholder="Add a stationery item" />
+
+<button class="btn btn-primary mt-2" (click)="addStationeryItem()">Add Stationery Item</button>
+
+<ul class="mt-3 list-group">
+  <li class="list-group-item" *ngFor="let stationeryItem of stationeryItems">
+    {{stationeryItem}}
+  </li>
+</ul>
+
