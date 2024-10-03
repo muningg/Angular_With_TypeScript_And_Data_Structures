@@ -47,6 +47,7 @@ import { PresentationListComponent } from './components/presentation-list/presen
 import { TourListComponent } from './components/tour-list/tour-list.component';
 import { EventListComponent } from './components/event-list/event-list.component';
 import { DeveloperToolsListComponent } from './components/developer-tools-list/developer-tools-list.component';
+import { FrameworkListComponent } from './components/framework-list/framework-list.component';
 
 export const routes: Routes = [
     {path: 'students-list', component: StudentListComponent},
@@ -97,5 +98,6 @@ export const routes: Routes = [
     {path: 'tour-list', component: TourListComponent},
     {path: 'event-list', component: EventListComponent},
     {path: 'developer-tools-list', component: DeveloperToolsListComponent},
+    {path: 'framework-tools-list', component: FrameworkListComponent},
     
 ];

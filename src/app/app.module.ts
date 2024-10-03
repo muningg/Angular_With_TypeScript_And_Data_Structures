@@ -54,6 +54,7 @@ import { PresentationListComponent } from './components/presentation-list/presen
 import { TourListComponent } from './components/tour-list/tour-list.component';
 import { EventListComponent } from './components/event-list/event-list.component';
 import { DeveloperToolsListComponent } from './components/developer-tools-list/developer-tools-list.component';
+import { FrameworkListComponent } from './components/framework-list/framework-list.component';
 
 @NgModule({
   imports: [
@@ -113,6 +114,7 @@ import { DeveloperToolsListComponent } from './components/developer-tools-list/d
     TourListComponent,
     EventListComponent,
     DeveloperToolsListComponent,
+    FrameworkListComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
