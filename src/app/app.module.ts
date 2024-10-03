@@ -13,6 +13,7 @@ import { CourseListComponent } from './components/course-list/course-list.compon
 import { BookListComponent } from './components/book-list/book-list.component';
 import { CityListComponent } from './components/city-list/city-list.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { CarModelListComponent } from './components/car-model-list/car-model-list.component';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import { MovieListComponent } from './components/movie-list/movie-list.component
     BookListComponent,
     CityListComponent,
     MovieListComponent,
+    CarModelListComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
