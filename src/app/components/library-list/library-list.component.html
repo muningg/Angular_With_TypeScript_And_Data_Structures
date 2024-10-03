@@ -1,0 +1,11 @@
+<p>50. Library List</p>
+<input type="text" class="form-control" [(ngModel)]="newLibrary" placeholder="Add a library" />
+
+<button class="btn btn-primary mt-2" (click)="addLibrary()">Add Library</button>
+
+<ul class="mt-3 list-group">
+  <li class="list-group-item" *ngFor="let library of libraries">
+    {{library}}
+  </li>
+</ul>
+
