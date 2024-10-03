@@ -37,6 +37,7 @@ import { DestinationListComponent } from './components/destination-list/destinat
 import { LaptopListComponent } from './components/laptop-list/laptop-list.component';
 import { LaptopSpecificationsListComponent } from './components/laptop-specifications-list/laptop-specifications-list.component';
 import { ComputerHardwareListComponent } from './components/computer-hardware-list/computer-hardware-list.component';
+import { MobileAppListComponent } from './components/mobile-app-list/mobile-app-list.component';
 
 @NgModule({
   imports: [
@@ -79,6 +80,7 @@ import { ComputerHardwareListComponent } from './components/computer-hardware-li
     LaptopListComponent,
     LaptopSpecificationsListComponent,
     ComputerHardwareListComponent,
+    MobileAppListComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

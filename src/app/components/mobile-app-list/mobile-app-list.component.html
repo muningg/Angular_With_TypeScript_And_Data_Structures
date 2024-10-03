@@ -1,0 +1,10 @@
+<p>32. Mobile App List</p>
+<input type="text" class="form-control" [(ngModel)]="newMobileApp" placeholder="Add a mobile app" />
+
+<button class="btn btn-primary mt-2" (click)="addMobileApp()">Add Mobile App</button>
+
+<ul class="mt-3 list-group">
+  <li class="list-group-item" *ngFor="let app of mobileApps">
+    {{app}}
+  </li>
+</ul>
