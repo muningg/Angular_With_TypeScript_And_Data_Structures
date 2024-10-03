@@ -1,0 +1,11 @@
+<p>45. Presentation List</p>
+<input type="text" class="form-control" [(ngModel)]="newPresentation" placeholder="Add a presentation" />
+
+<button class="btn btn-primary mt-2" (click)="addPresentation()">Add Presentation</button>
+
+<ul class="mt-3 list-group">
+  <li class="list-group-item" *ngFor="let presentation of presentations">
+    {{presentation}}
+  </li>
+</ul>
+
