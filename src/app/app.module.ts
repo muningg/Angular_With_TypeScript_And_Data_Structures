@@ -23,6 +23,7 @@ import { AnimalListComponent } from './components/animal-list/animal-list.compon
 import { ToolListComponent } from './components/tool-list/tool-list.component';
 import { LanguageListComponent } from './components/language-list/language-list.component';
 import { GameListComponent } from './components/game-list/game-list.component';
+import { SoftwareListComponent } from './components/software-list/software-list.component';
 
 @NgModule({
   imports: [
@@ -51,6 +52,7 @@ import { GameListComponent } from './components/game-list/game-list.component';
     ToolListComponent,
     LanguageListComponent,
     GameListComponent,
+    SoftwareListComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
