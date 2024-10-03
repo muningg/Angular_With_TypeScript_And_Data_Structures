@@ -51,6 +51,7 @@ import { ExerciseListComponent } from './components/exercise-list/exercise-list.
 import { MealPlanListComponent } from './components/meal-plan-list/meal-plan-list.component';
 import { BudgetListComponent } from './components/budget-list/budget-list.component';
 import { PresentationListComponent } from './components/presentation-list/presentation-list.component';
+import { TourListComponent } from './components/tour-list/tour-list.component';
 
 @NgModule({
   imports: [
@@ -107,6 +108,7 @@ import { PresentationListComponent } from './components/presentation-list/presen
     MealPlanListComponent,
     BudgetListComponent,
     PresentationListComponent,
+    TourListComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
