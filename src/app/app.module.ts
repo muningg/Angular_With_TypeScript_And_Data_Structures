@@ -34,6 +34,7 @@ import { LectureListComponent } from './components/lecture-list/lecture-list.com
 import { StationeryListComponent } from './components/stationery-list/stationery-list.component';
 import { FlowerListComponent } from './components/flower-list/flower-list.component';
 import { DestinationListComponent } from './components/destination-list/destination-list.component';
+import { LaptopListComponent } from './components/laptop-list/laptop-list.component';
 
 @NgModule({
   imports: [
@@ -73,6 +74,7 @@ import { DestinationListComponent } from './components/destination-list/destinat
     StationeryListComponent,
     FlowerListComponent,
     DestinationListComponent,
+    LaptopListComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
