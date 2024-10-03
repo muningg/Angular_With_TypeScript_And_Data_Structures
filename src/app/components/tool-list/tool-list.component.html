@@ -1,0 +1,11 @@
+<p>15. Tool List</p>
+<input type="text" class="form-control" [(ngModel)]="newTool" placeholder="Add a tool" />
+
+<button class="btn btn-primary mt-2" (click)="addTool()">Add Tool</button>
+
+<ul class="mt-3 list-group">
+  <li class="list-group-item" *ngFor="let tool of tools">
+    {{tool}}
+  </li>
+</ul>
+
