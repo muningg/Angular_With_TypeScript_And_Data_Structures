@@ -32,6 +32,7 @@ import { ClassroomListComponent } from './components/classroom-list/classroom-li
 import { InventoryListComponent } from './components/inventory-list/inventory-list.component';
 import { LectureListComponent } from './components/lecture-list/lecture-list.component';
 import { StationeryListComponent } from './components/stationery-list/stationery-list.component';
+import { FlowerListComponent } from './components/flower-list/flower-list.component';
 
 @NgModule({
   imports: [
@@ -69,6 +70,7 @@ import { StationeryListComponent } from './components/stationery-list/stationery
     InventoryListComponent,
     LectureListComponent,
     StationeryListComponent,
+    FlowerListComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
