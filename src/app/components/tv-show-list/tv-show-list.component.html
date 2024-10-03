@@ -1,0 +1,13 @@
+<p>34. TV Show List</p>
+
+<input type="text" class="form-control" placeholder="TV Show title" [(ngModel)]="newShowTitle" />
+<input type="date" class="form-control" placeholder="TV Show year" [(ngModel)]="newShowYear" min="1900" max="2100" />
+<button class="btn btn-primary mt-2" (click)="addShow()">Add TV Show</button>
+
+<ul class="mt-3 list-group">
+    <li class="list-group-item" *ngFor="let show of shows">
+        {{show.title}} ({{show.year}})
+    </li>
+</ul>
+
+
