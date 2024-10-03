@@ -19,6 +19,7 @@ import { SubjectListComponent } from './components/subject-list/subject-list.com
 import { CountryListComponent } from './components/country-list/country-list.component';
 import { SportsListComponent } from './components/sports-list/sports-list.component';
 import { VegetableListComponent } from './components/vegetable-list/vegetable-list.component';
+import { AnimalListComponent } from './components/animal-list/animal-list.component';
 
 @NgModule({
   imports: [
@@ -43,6 +44,7 @@ import { VegetableListComponent } from './components/vegetable-list/vegetable-li
     CountryListComponent,
     SportsListComponent,
     VegetableListComponent,
+    AnimalListComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
