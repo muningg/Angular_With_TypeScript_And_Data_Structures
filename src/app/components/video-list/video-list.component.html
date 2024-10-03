@@ -1,0 +1,12 @@
+<p>33. Video List</p>
+
+<input type="text" class="form-control" placeholder="Video description" [(ngModel)]="newVideoDescription" />
+<input type="text" class="form-control" placeholder="Video link" [(ngModel)]="newVideoLink" />
+
+<button class="btn btn-primary mt-2" (click)="addVideo()">Add Video</button>
+
+<ul class="mt-3 list-group">
+    <li class="list-group-item" *ngFor="let video of videos">
+        <a [href]="video.link" target="_blank">{{video.description}}</a>
+    </li>
+</ul>

@@ -38,6 +38,7 @@ import { LaptopListComponent } from './components/laptop-list/laptop-list.compon
 import { LaptopSpecificationsListComponent } from './components/laptop-specifications-list/laptop-specifications-list.component';
 import { ComputerHardwareListComponent } from './components/computer-hardware-list/computer-hardware-list.component';
 import { MobileAppListComponent } from './components/mobile-app-list/mobile-app-list.component';
+import { VideoListComponent } from './components/video-list/video-list.component';
 
 @NgModule({
   imports: [
@@ -81,6 +82,7 @@ import { MobileAppListComponent } from './components/mobile-app-list/mobile-app-
     LaptopSpecificationsListComponent,
     ComputerHardwareListComponent,
     MobileAppListComponent,
+    VideoListComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
