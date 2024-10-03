@@ -1,0 +1,11 @@
+<p>35. Furniture List</p>
+<input type="text" class="form-control" [(ngModel)]="newFurniture" placeholder="Add a furniture" />
+
+<button class="btn btn-primary mt-2" (click)="addFurniture()">Add Furniture</button>
+
+<ul class="mt-3 list-group">
+  <li class="list-group-item" *ngFor="let furniture of furnitures">
+    {{furniture}}
+  </li>
+</ul>
+
