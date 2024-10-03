@@ -21,6 +21,7 @@ import { PhoneContactListComponent } from './components/phone-contact-list/phone
 import { MusicPlaylistComponent } from './components/music-playlist/music-playlist.component';
 import { FoodMenuComponent } from './components/food-menu/food-menu.component';
 import { GroceryListComponent } from './components/grocery-list/grocery-list.component';
+import { ClassroomListComponent } from './components/classroom-list/classroom-list.component';
 
 export const routes: Routes = [
     {path: 'students-list', component: StudentListComponent},
@@ -45,5 +46,5 @@ export const routes: Routes = [
     {path: 'music-list', component: MusicPlaylistComponent},
     {path: 'food-list', component: FoodMenuComponent},
     {path: 'grocery-list', component: GroceryListComponent},
-
+    {path: 'classroom-list', component: ClassroomListComponent},
 ];

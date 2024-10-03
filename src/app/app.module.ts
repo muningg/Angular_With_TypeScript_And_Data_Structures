@@ -28,6 +28,7 @@ import { PhoneContactListComponent } from './components/phone-contact-list/phone
 import { MusicPlaylistComponent } from './components/music-playlist/music-playlist.component';
 import { FoodMenuComponent } from './components/food-menu/food-menu.component';
 import { GroceryListComponent } from './components/grocery-list/grocery-list.component';
+import { ClassroomListComponent } from './components/classroom-list/classroom-list.component';
 
 @NgModule({
   imports: [
@@ -61,6 +62,7 @@ import { GroceryListComponent } from './components/grocery-list/grocery-list.com
     MusicPlaylistComponent,
     FoodMenuComponent,
     GroceryListComponent,
+    ClassroomListComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
