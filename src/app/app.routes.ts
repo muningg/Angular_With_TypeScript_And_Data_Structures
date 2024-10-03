@@ -20,6 +20,7 @@ import { SoftwareListComponent } from './components/software-list/software-list.
 import { PhoneContactListComponent } from './components/phone-contact-list/phone-contact-list.component';
 import { MusicPlaylistComponent } from './components/music-playlist/music-playlist.component';
 import { FoodMenuComponent } from './components/food-menu/food-menu.component';
+import { GroceryListComponent } from './components/grocery-list/grocery-list.component';
 
 export const routes: Routes = [
     {path: 'students-list', component: StudentListComponent},
@@ -43,4 +44,6 @@ export const routes: Routes = [
     {path: 'phone-contact-list', component: PhoneContactListComponent},
     {path: 'music-list', component: MusicPlaylistComponent},
     {path: 'food-list', component: FoodMenuComponent},
+    {path: 'grocery-list', component: GroceryListComponent},
+
 ];
