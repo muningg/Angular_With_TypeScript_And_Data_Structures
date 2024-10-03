@@ -11,6 +11,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { SubjectListComponent } from './components/subject-list/subject-list.component';
 import { CountryListComponent } from './components/country-list/country-list.component';
 import { SportsListComponent } from './components/sports-list/sports-list.component';
+import { VegetableListComponent } from './components/vegetable-list/vegetable-list.component';
 
 export const routes: Routes = [
     {path: 'students-list', component: StudentListComponent},
@@ -25,4 +26,5 @@ export const routes: Routes = [
     {path: 'subject-list', component: SubjectListComponent},
     {path: 'country-list', component: CountryListComponent},
     {path: 'sports-list', component: SportsListComponent},
+    {path: 'vegetable-list', component: VegetableListComponent},
 ];

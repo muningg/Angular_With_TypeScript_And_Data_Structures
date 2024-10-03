@@ -1,0 +1,11 @@
+<p>13. Vegetable List</p>
+<input type="text" class="form-control" [(ngModel)]="newVegetable" placeholder="Add a vegetable" />
+
+<button class="btn btn-primary mt-2" (click)="addVegetable()">Add Vegetable</button>
+
+<ul class="mt-3 list-group">
+  <li class="list-group-item" *ngFor="let vegetable of vegetables">
+    {{vegetable}}
+  </li>
+</ul>
+
