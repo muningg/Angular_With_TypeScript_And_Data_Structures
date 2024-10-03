@@ -30,6 +30,7 @@ import { FoodMenuComponent } from './components/food-menu/food-menu.component';
 import { GroceryListComponent } from './components/grocery-list/grocery-list.component';
 import { ClassroomListComponent } from './components/classroom-list/classroom-list.component';
 import { InventoryListComponent } from './components/inventory-list/inventory-list.component';
+import { LectureListComponent } from './components/lecture-list/lecture-list.component';
 
 @NgModule({
   imports: [
@@ -65,6 +66,7 @@ import { InventoryListComponent } from './components/inventory-list/inventory-li
     GroceryListComponent,
     ClassroomListComponent,
     InventoryListComponent,
+    LectureListComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
