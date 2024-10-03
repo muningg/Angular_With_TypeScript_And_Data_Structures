@@ -12,6 +12,7 @@ import { FruitListComponent } from './components/fruit-list/fruit-list.component
 import { CourseListComponent } from './components/course-list/course-list.component';
 import { BookListComponent } from './components/book-list/book-list.component';
 import { CityListComponent } from './components/city-list/city-list.component';
+import { MovieListComponent } from './components/movie-list/movie-list.component';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { CityListComponent } from './components/city-list/city-list.component';
     FruitListComponent,
     CourseListComponent,
     BookListComponent,
-    CityListComponent
+    CityListComponent,
+    MovieListComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
