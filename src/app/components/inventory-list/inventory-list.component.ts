@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { InventoryListService } from './inventory-list.service';
 
 @Component({
   selector: 'app-inventory-list',
@@ -6,14 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './inventory-list.component.css'
 })
 export class InventoryListComponent {
-  inventoryItems: string[] = ['Chippy', 'Lucky Me', 'Nestle Milo', 'C2', 'Cheese Curls', 'Coke'];
+  inventoryItems: string[] = [];
   newInventoryItem: string = '';
-
+  constructor(private inventoryListService: InventoryListService) { }
+  
   addInventoryItem() {
     if (this.newInventoryItem.trim()) {
-      this.inventoryItems.push(this.newInventoryItem);
+      this.inventoryListService.addInventory(this.newInventoryItem);
       this.newInventoryItem = '';
     }
   }
-
+  provideInventoryList() {
+    this.inventoryItems = this.inventoryListService.loadInventorys();
+  }
 }

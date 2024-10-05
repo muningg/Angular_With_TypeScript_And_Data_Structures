@@ -1,8 +1,14 @@
 <p>24. Inventory List</p>
 <input type="text" class="form-control" [(ngModel)]="newInventoryItem" placeholder="Add an inventory item" />
 
-<button class="btn btn-primary mt-2" (click)="addInventoryItem()">Add Inventory Item</button>
-
+<div class="row">
+  <div class="col-sm-1">
+    <button class="btn btn-primary mt-2" (click)="addInventoryItem()">Add Inventory Item</button>
+  </div>
+  <div class="col-sm-1">
+    <button class="btn btn-secondary mt-2" (click)="provideInventoryList()">Load Inventory Items</button>
+  </div>
+</div>
 <ul class="mt-3 list-group">
   <li class="list-group-item" *ngFor="let inventoryItem of inventoryItems">
     {{inventoryItem}}
