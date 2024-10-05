@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FrameworkListService } from './framework-list.service';
 
 @Component({
   selector: 'app-framework-list',
@@ -6,13 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './framework-list.component.css'
 })
 export class FrameworkListComponent {
-  frameworks = ['React', 'Angular', 'Vue', 'Ember', 'Backbone'];
+  frameworks = [''];
   newFramework = '';
-
+  constructor(private frameworkListService: FrameworkListService) { }
+  
   addFramework() {
-    if (this.newFramework) {
-      this.frameworks.push(this.newFramework);
+    if (this.newFramework.trim()) {
+      this.frameworkListService.addFramework(this.newFramework);
       this.newFramework = '';
     }
+  }
+  provideFrameworksList() {
+    this.frameworks = this.frameworkListService.loadFrameworks();
   }
 }
