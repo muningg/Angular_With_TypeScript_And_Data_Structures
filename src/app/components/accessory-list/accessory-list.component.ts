@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AccessoryListService } from './accessory-list.service';
 
 @Component({
   selector: 'app-accessory-list',
@@ -6,13 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './accessory-list.component.css'
 })
 export class AccessoryListComponent {
-  accessories: string[] = ['Power Bank', 'Earbuds', 'Mobile Case', 'Screen Protector', 'Memory Card', 'Portable Charger', 'Headphones', 'Wireless Speaker', 'Tempered Glass', 'Pop Socket'];
+  accessories: string[] = [];
   newAccessory: string = '';
+  constructor(private accessoriesListService: AccessoryListService) { }
 
   addAccessory() {
     if (this.newAccessory.trim()) {
-      this.accessories.push(this.newAccessory);
+      this.accessoriesListService.addAccessories(this.newAccessory);
       this.newAccessory = '';
     }
+  }
+  provideAccessoriesList() {
+    this.accessories = this.accessoriesListService.loadAccessories();
   }
 }
