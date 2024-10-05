@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FoodMenuService } from './food-menu.service';
 
 @Component({
   selector: 'app-food-menu',
@@ -6,13 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './food-menu.component.css'
 })
 export class FoodMenuComponent {
-  foods: string[] = ['Burger', 'Pizza', 'Sushi', 'Shawarma', 'Fries'];
+  foods: string[] = [];
   newFood: string = '';
-
+  constructor(private foodListService: FoodMenuService) { }
+  
   addFood() {
     if (this.newFood.trim()) {
-      this.foods.push(this.newFood);
+      this.foodListService.addFood(this.newFood);
       this.newFood = '';
     }
+  }
+  provideFoodsList() {
+    this.foods = this.foodListService.loadFoods();
   }
 }

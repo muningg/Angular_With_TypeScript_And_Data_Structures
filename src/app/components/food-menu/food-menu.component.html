@@ -1,8 +1,14 @@
 <p>21. Food Menu</p>
 <input type="text" class="form-control" [(ngModel)]="newFood" placeholder="Add a food" />
 
-<button class="btn btn-primary mt-2" (click)="addFood()">Add Food</button>
-
+<div class="row">
+  <div class="col-sm-1">
+    <button class="btn btn-primary mt-2" (click)="addFood()">Add Food</button>
+  </div>
+  <div class="col-sm-1">
+    <button class="btn btn-secondary mt-2" (click)="provideFoodsList()">Load Foods</button>
+  </div>
+</div>
 <ul class="mt-3 list-group">
   <li class="list-group-item" *ngFor="let food of foods">
     {{food}}
