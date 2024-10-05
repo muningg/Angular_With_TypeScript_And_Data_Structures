@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LanguageListService } from './language-list.service';
 
 @Component({
   selector: 'app-language-list',
@@ -6,13 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './language-list.component.css'
 })
 export class LanguageListComponent {
-  languages: string[] = ['Java', 'JavaScript', 'Python', 'C#', 'C++', 'Go'];
+  languages: string[] = [];
   newLanguage: string = '';
-
+  constructor(private languageListService: LanguageListService) { }
+  
   addLanguage() {
     if (this.newLanguage.trim()) {
-      this.languages.push(this.newLanguage);
+      this.languageListService.addLanguage(this.newLanguage);
       this.newLanguage = '';
     }
+  }
+  provideLanguagesList() {
+    this.languages = this.languageListService.loadLanguages();
   }
 }

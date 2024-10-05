@@ -1,8 +1,14 @@
 <p>16. Language List</p>
 <input type="text" class="form-control" [(ngModel)]="newLanguage" placeholder="Add a language" />
 
-<button class="btn btn-primary mt-2" (click)="addLanguage()">Add Language</button>
-
+<div class="row">
+  <div class="col-sm-1">
+    <button class="btn btn-primary mt-2" (click)="addLanguage()">Add Language</button>
+  </div>
+  <div class="col-sm-1">
+    <button class="btn btn-secondary mt-2" (click)="provideLanguagesList()">Load Languages</button>
+  </div>
+</div>
 <ul class="mt-3 list-group">
   <li class="list-group-item" *ngFor="let language of languages">
     {{language}}
