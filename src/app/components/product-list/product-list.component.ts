@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductListService } from './product-list.service';
 
 @Component({
   selector: 'app-product-list',
@@ -6,16 +7,19 @@ import { Component } from '@angular/core';
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent {
-  products: string[] = ['Milo', "Energen","Oatmeal","Coke","Fudgee Bar"];
+  products: string[] = [];
   newProduct: string = '';
 
+  constructor(private productListService: ProductListService) { }
+  
   addProduct() {
     if (this.newProduct.trim()) {
-      this.products.push(this.newProduct);
+      this.productListService.addProduct(this.newProduct);
       this.newProduct = '';
     }
   }
-  
-
+  provideProductsList() {
+    this.products = this.productListService.loadProducts();
+  }
 
 }
