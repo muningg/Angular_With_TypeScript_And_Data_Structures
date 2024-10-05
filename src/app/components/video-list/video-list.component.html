@@ -3,8 +3,14 @@
 <input type="text" class="form-control" placeholder="Video description" [(ngModel)]="newVideoDescription" />
 <input type="text" class="form-control" placeholder="Video link" [(ngModel)]="newVideoLink" />
 
-<button class="btn btn-primary mt-2" (click)="addVideo()">Add Video</button>
-
+<div class="row">
+    <div class="col-sm-1">
+        <button class="btn btn-primary mt-2" (click)="addVideo()">Add Video</button>
+    </div>
+    <div class="col-sm-1">
+        <button class="btn btn-secondary mt-2" (click)="provideVideosList()">Load Videos</button>
+    </div>
+</div>
 <ul class="mt-3 list-group">
     <li class="list-group-item" *ngFor="let video of videos">
         <a [href]="video.link" target="_blank">{{video.description}}</a>

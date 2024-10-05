@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { VideoListService } from './video-list.service'; 
 
 @Component({
   selector: 'app-video-list',
@@ -6,22 +7,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./video-list.component.css']
 })
 export class VideoListComponent {
-  videos: { description: string; link: string }[] = [
-    { description: 'Video 1', link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' },
-    { description: 'Node.js Tutorial for Beginners: Learn Node in 1 Hour', link: 'https://www.youtube.com/watch?v=TlB_eWDSMt4' },
-    { description: 'Angular Tutorial for Beginners: Learn Angular & TypeScript', link: 'https://www.youtube.com/watch?v=k5E2AVpwsko' },
-    { description: 'Firebase - Ultimate Beginner\'s Guide', link: 'https://www.youtube.com/watch?v=9kRgVxULbag' },
-  ];
+  videos: { description: string; link: string }[] = []; // Start with an empty array
   newVideoDescription: string = '';
   newVideoLink: string = '';
+
+  constructor(private videoListService: VideoListService) { }
 
   addVideo() {
     if (!this.newVideoDescription || !this.newVideoLink) {
       return;
     }
-    this.videos.push({ description: this.newVideoDescription, link: this.newVideoLink });
+    const newVideo = { description: this.newVideoDescription, link: this.newVideoLink };
+    this.videoListService.addVideo(newVideo); 
     this.newVideoDescription = '';
     this.newVideoLink = '';
   }
+  
+  provideVideosList() {
+    this.videos = this.videoListService.loadVideos(); 
+  }
 }
-
