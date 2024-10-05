@@ -1,8 +1,14 @@
 <p>11. Country List</p>
 <input type="text" class="form-control" [(ngModel)]="newCountry" placeholder="Add a country" />
 
-<button class="btn btn-primary mt-2" (click)="addCountry()">Add Country</button>
-
+<div class="row">
+  <div class="col-sm-1">
+    <button class="btn btn-primary mt-2" (click)="addCountry()">Add Country</button>
+  </div>
+  <div class="col-sm-1">
+    <button class="btn btn-secondary mt-2" (click)="provideCountrysList()">Load Countries</button>
+  </div>
+</div>
 <ul class="mt-3 list-group">
   <li class="list-group-item" *ngFor="let country of countries">
     {{country}}
