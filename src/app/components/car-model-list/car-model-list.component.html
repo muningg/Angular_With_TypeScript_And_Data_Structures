@@ -1,8 +1,14 @@
 <p>8. Car Model List</p>
 <input type="text" class="form-control" [(ngModel)]="newCarModel" placeholder="Add a car model" />
 
-<button class="btn btn-primary mt-2" (click)="addCarModel()">Add Car Model</button>
-
+<div class="row">
+  <div class="col-sm-1">
+    <button class="btn btn-primary mt-2" (click)="addCarModel()">Add Car Model</button>
+  </div>
+  <div class="col-sm-1">
+    <button class="btn btn-secondary mt-2" (click)="provideCarsList()">Load Cars</button>
+  </div>
+</div>
 <ul class="mt-3 list-group">
   <li class="list-group-item" *ngFor="let carModel of carModels">
     {{carModel}}

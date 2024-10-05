@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CarModelListService } from './car-model-list.service';
 
 @Component({
   selector: 'app-car-model-list',
@@ -6,13 +7,18 @@ import { Component } from '@angular/core';
   styleUrl: './car-model-list.component.css'
 })
 export class CarModelListComponent {
-  carModels: string[] = ['Toyota Corolla', 'Ford F-150', 'Honda Civic', 'Nissan Altima', 'Chevrolet Silverado'];
+  carModels: string[] = [];
   newCarModel: string = '';
 
+  constructor(private carListService: CarModelListService) { }
+  
   addCarModel() {
     if (this.newCarModel.trim()) {
-      this.carModels.push(this.newCarModel);
+      this.carListService.addCar(this.newCarModel);
       this.newCarModel = '';
     }
+  }
+  provideCarsList() {
+    this.carModels = this.carListService.loadCars();
   }
 }
