@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SportsListService } from './sports-list.service';
 
 @Component({
   selector: 'app-sports-list',
@@ -6,13 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './sports-list.component.css'
 })
 export class SportsListComponent {
-  sports: string[] = ['Football', 'Basketball', 'Volleyball', 'Tennis', 'Badminton'];
+  sports: string[] = [];
   newSports: string = '';
-
+  constructor(private sportListService: SportsListService) { }
+  
   addSport() {
     if (this.newSports.trim()) {
-      this.sports.push(this.newSports);
+      this.sportListService.addSport(this.newSports);
       this.newSports = '';
     }
+  }
+  provideSportsList() {
+    this.sports = this.sportListService.loadSports();
   }
 }
