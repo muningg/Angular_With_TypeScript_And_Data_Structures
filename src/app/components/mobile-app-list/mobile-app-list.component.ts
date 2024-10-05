@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MobileAppListService } from './mobile-app-list.service';
 
 @Component({
   selector: 'app-mobile-app-list',
@@ -6,13 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './mobile-app-list.component.css'
 })
 export class MobileAppListComponent {
-  mobileApps: string[] = ['Facebook', 'Instagram', 'Twitter', 'Reddit', 'YouTube'];
+  mobileApps: string[] = [];
   newMobileApp: string = '';
-
+  constructor(private mobileappListService: MobileAppListService) { }
+  
   addMobileApp() {
     if (this.newMobileApp.trim()) {
-      this.mobileApps.push(this.newMobileApp);
+      this.mobileappListService.addMobileApp(this.newMobileApp);
       this.newMobileApp = '';
     }
+  }
+  provideMobileAppsList() {
+    this.mobileApps = this.mobileappListService.loadMobileApps();
   }
 }
