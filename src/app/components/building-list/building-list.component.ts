@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BuildingListService } from './building-list.service';
 
 @Component({
   selector: 'app-building-list',
@@ -6,13 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './building-list.component.css'
 })
 export class BuildingListComponent {
-  buildings: string[] = ['Eiffel Tower', 'Burj Khalifa', 'Tokyo Tower', 'Big Ben', 'Petronas Twin Towers', 'Chrysler Building', 'Golden Gate Bridge', 'Staue of Liberty', 'Sydney Opera House', 'Philippine Building'];
+  buildings: string[] = [];
   newBuilding: string = '';
-
+  constructor(private buildingListService: BuildingListService) { }
+  
   addBuilding() {
     if (this.newBuilding.trim()) {
-      this.buildings.push(this.newBuilding);
+      this.buildingListService.addBuilding(this.newBuilding);
       this.newBuilding = '';
     }
+  }
+  provideBuildingsList() {
+    this.buildings = this.buildingListService.loadBuildings();
   }
 }
