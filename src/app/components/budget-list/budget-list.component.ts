@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BudgetListService } from './budget-list.service';
 
 @Component({
   selector: 'app-budget-list',
@@ -6,14 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './budget-list.component.css'
 })
 export class BudgetListComponent {
-  budgets: string[] = ['Computer : 1M', 'Hosting:15000', 'Domain:15000', 'Software: 1M', 'Training:1M'];
+  budgets: string[] = [];
   newBudget: string = '';
+  constructor(private budgetListService: BudgetListService) { }
 
   addBudget() {
     if (this.newBudget.trim()) {
-      this.budgets.push(this.newBudget);
+      this.budgetListService.addBudget(this.newBudget);
       this.newBudget = '';
     }
   }
-
+  provideBudgetsList() {
+    this.budgets = this.budgetListService.loadBudgets();
+  }
 }
