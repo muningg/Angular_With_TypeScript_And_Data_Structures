@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PhoneContactListService } from './phone-contact-list.service';
 
 @Component({
   selector: 'app-phone-contact-list',
@@ -6,13 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './phone-contact-list.component.css'
 })
 export class PhoneContactListComponent {
-  contacts: string[] = ['0901234567', '0907654321'];
+  contacts: string[] = [];
   newContact: string = '';
+  constructor(private contactListService: PhoneContactListService) { }
 
   addContact() {
     if (this.newContact.trim()) {
-      this.contacts.push(this.newContact);
+      this.contactListService.addContact(this.newContact);
       this.newContact = '';
     }
+  }
+  provideContactsList() {
+    this.contacts = this.contactListService.loadContacts();
   }
 }

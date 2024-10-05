@@ -1,13 +1,16 @@
 <p>19. Phone Contact List</p>
 <input type="text" class="form-control" [(ngModel)]="newContact" placeholder="Add a contact" />
 
-<button class="btn btn-primary mt-2" (click)="addContact()">Add Contact</button>
-
+<div class="row">
+  <div class="col-sm-1">
+    <button class="btn btn-primary mt-2" (click)="addContact()">Add Contact</button>
+  </div>
+  <div class="col-sm-1">
+    <button class="btn btn-secondary mt-2" (click)="provideContactsList()">Load Contacts</button>
+  </div>
+</div>
 <ul class="mt-3 list-group">
   <li class="list-group-item" *ngFor="let contact of contacts">
     {{contact}}
   </li>
 </ul>
-
-
-
