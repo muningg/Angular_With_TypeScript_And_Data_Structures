@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PaintingListService } from './painting-list.service';
 
 @Component({
   selector: 'app-painting-list',
@@ -6,13 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './painting-list.component.css'
 })
 export class PaintingListComponent {
-  paintings: string[] = ['Mona Lisa', 'The Starry Night', 'The Scream', 'The Last Supper', 'Girl with a Pearl Earring', 'The Creation of Adam', 'Guernica', 'The Night Cafe', 'The Kiss', 'Starry Night Over the Rhone'];
+  paintings: string[] = [];
   newPainting: string = '';
-
+  constructor(private paintingListService: PaintingListService) { }
+  
   addPainting() {
     if (this.newPainting.trim()) {
-      this.paintings.push(this.newPainting);
+      this.paintingListService.addPainting(this.newPainting);
       this.newPainting = '';
     }
+  }
+  providePaintingsList() {
+    this.paintings = this.paintingListService.loadPaintings();
   }
 }
