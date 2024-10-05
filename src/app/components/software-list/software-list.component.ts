@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SoftwareListService } from './software-list.service';
 
 @Component({
   selector: 'app-software-list',
@@ -6,13 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './software-list.component.css'
 })
 export class SoftwareListComponent {
-  softwares: string[] = ['Microsoft Office', 'Google Chrome', 'Zoom', 'Visual Studio Code', 'Git', 'Node.js', 'Apache', 'MySQL'];
+  softwares: string[] = [];
   newSoftware: string = '';
-
+  constructor(private softwareListService: SoftwareListService) { }
+  
   addSoftware() {
     if (this.newSoftware.trim()) {
-      this.softwares.push(this.newSoftware);
+      this.softwareListService.addSoftware(this.newSoftware);
       this.newSoftware = '';
     }
+  }
+  provideSoftwaresList() {
+    this.softwares = this.softwareListService.loadSoftwares();
   }
 }
