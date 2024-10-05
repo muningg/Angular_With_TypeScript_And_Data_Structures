@@ -19,7 +19,6 @@ export class StudentListComponent {
     }
   }
 
-  // Called when the "Get Reserved Students" button is clicked
   provideStudentsList() {
     this.students = this.studentListService.provideStudentsList();
   }
