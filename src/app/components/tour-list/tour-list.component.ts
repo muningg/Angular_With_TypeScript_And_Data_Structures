@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TourListService } from './tour-list.service';
 
 @Component({
   selector: 'app-tour-list',
@@ -6,13 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './tour-list.component.css'
 })
 export class TourListComponent {
-  tours: string[] = ['Chocolate Hills', 'Mayon Volcano', 'Tubbataha Reef National Park', 'Banaue Rice Terraces', 'Pagsanjan Falls', 'Vigan', 'Intramuros', 'Corregidor', 'Fort Santiago', 'Taal Volcano'];
+  tours: string[] = [];
   newTour: string = '';
-
+  constructor(private tourListService: TourListService) { }
+  
   addTour() {
     if (this.newTour.trim()) {
-      this.tours.push(this.newTour);
+      this.tourListService.addTour(this.newTour);
       this.newTour = '';
     }
+  }
+  provideToursList() {
+    this.tours = this.tourListService.loadTours();
   }
 }
