@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ExerciseListService } from './exercise-list.service';
 
 @Component({
   selector: 'app-exercise-list',
@@ -6,13 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './exercise-list.component.css'
 })
 export class ExerciseListComponent {
-  exercises: string[] = ['Jumping Jacks', 'Push Ups', 'Running', 'Yoga', 'Walking', 'Swimming', 'Cycling', 'Dancing', 'Boxing', 'Gymnastics'];
+  exercises: string[] = [];
   newExercise: string = '';
+  constructor(private exerciseListService: ExerciseListService) { }
 
   addExercise() {
     if (this.newExercise.trim()) {
-      this.exercises.push(this.newExercise);
+      this.exerciseListService.addExercise(this.newExercise);
       this.newExercise = '';
     }
+  }
+  provideExercisesList() {
+    this.exercises = this.exerciseListService.loadExercises();
   }
 }
