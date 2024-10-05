@@ -1,12 +1,16 @@
 <p>31. Computer Hardware List</p>
 <input type="text" class="form-control" [(ngModel)]="newComputerHardware" placeholder="Add a computer hardware" />
 
-<button class="btn btn-primary mt-2" (click)="addComputerHardware()">Add Computer Hardware</button>
-
+<div class="row">
+  <div class="col-sm-1">
+    <button class="btn btn-primary mt-2" (click)="addComputerHardware()">Add Computer Hardware</button>
+  </div>
+  <div class="col-sm-1">
+    <button class="btn btn-secondary mt-2" (click)="provideComputerHardwaresList()">Load Computer Hardwares</button>
+  </div>
+</div>
 <ul class="mt-3 list-group">
   <li class="list-group-item" *ngFor="let hardware of computerHardwares">
     {{hardware}}
   </li>
 </ul>
-
-
