@@ -1,13 +1,19 @@
 <p>30. Laptop Specification List</p>
+
 <input type="text" class="form-control" [(ngModel)]="newLaptop" placeholder="Add a laptop brand" />
 <input type="text" class="form-control" [(ngModel)]="newSpecification" placeholder="Add a laptop specification" />
 
-<button class="btn btn-primary mt-2" (click)="addLaptopSpecification()">Add Laptop Specification</button>
+<div class="row">
+  <div class="col-sm-1">
+    <button class="btn btn-primary mt-2" (click)="addLaptopSpecification()">Add Laptop Specification</button>
+  </div>
+  <div class="col-sm-1">
+    <button class="btn btn-secondary mt-2" (click)="provideSpecificationsList()">Load Specifications</button>
+  </div>
+</div>
 
 <ul class="mt-3 list-group">
   <li class="list-group-item" *ngFor="let laptop of laptops">
-    {{laptop.brand}} : {{laptop.specifications}}
+    {{ laptop.brand }} : {{ laptop.specifications.join(', ') }}
   </li>
 </ul>
-
-

@@ -1,30 +1,38 @@
 import { Component } from '@angular/core';
+import { LaptopSpecificationsListService } from './laptop-specifications-list.service';
+
+// Define the Laptop interface
+interface Laptop {
+  brand: string;
+  specifications: string[];
+}
 
 @Component({
   selector: 'app-laptop-specifications-list',
   templateUrl: './laptop-specifications-list.component.html',
-  styleUrl: './laptop-specifications-list.component.css'
+  styleUrls: ['./laptop-specifications-list.component.css']
 })
 export class LaptopSpecificationsListComponent {
-  laptops = [
-    { brand: 'Dell', specifications: ['Core i7', '16GB RAM', '512GB SSD'] },
-    { brand: 'HP', specifications: ['Core i5', '8GB RAM', '256GB SSD'] },
-    { brand: 'Lenovo', specifications: ['Core i3', '4GB RAM', '128GB SSD'] },
-    { brand: 'Asus', specifications: ['Core i9', '32GB RAM', '1TB SSD'] },
-    { brand: 'Apple', specifications: ['Core i7', '16GB RAM', '512GB SSD'] }
-  ];
+
+  laptops: Laptop[] = []; 
   newLaptop: string = '';
   newSpecification: string = '';
 
+  constructor(private laptopSpecificationsListService: LaptopSpecificationsListService) {}
+
+  provideSpecificationsList() {
+    this.laptops = this.laptopSpecificationsListService.loadLaptops();
+  }
+
   addLaptopSpecification() {
-    if (this.newSpecification.trim()) {
-      this.laptops.push({
+    if (this.newLaptop.trim() && this.newSpecification.trim()) {
+      const newLaptop: Laptop = {
         brand: this.newLaptop,
         specifications: [this.newSpecification]
-      });
+      };
+      this.laptopSpecificationsListService.addLaptop(newLaptop);
       this.newLaptop = '';
       this.newSpecification = '';
     }
   }
-
 }
