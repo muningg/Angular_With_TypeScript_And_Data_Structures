@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MusicPlaylistService } from './music-playlist.service';
 
 @Component({
   selector: 'app-music-playlist',
@@ -6,13 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './music-playlist.component.css'
 })
 export class MusicPlaylistComponent {
-  songs: string[] = ['I\'m Not Okay', 'Helena', 'Cancer','The Black Parade'];
+  songs: string[] = [];
   newSong: string = '';
-
+  constructor(private songListService: MusicPlaylistService) { }
+  
   addSong() {
     if (this.newSong.trim()) {
-      this.songs.push(this.newSong);
+      this.songListService.addSong(this.newSong);
       this.newSong = '';
     }
+  }
+  provideSongsList() {
+    this.songs = this.songListService.loadSongs();
   }
 }
