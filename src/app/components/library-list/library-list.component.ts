@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LibraryListService } from './library-list.service';
 
 @Component({
   selector: 'app-library-list',
@@ -6,13 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './library-list.component.css'
 })
 export class LibraryListComponent {
-  libraries = ['React', 'Angular', 'Vue', 'Ember', 'Backbone', 'Bootstrap', 'FontAwesome', 'TypeScript', 'SASS', 'Angular CLI', 'Angular Material'];
+  libraries = [''];
   newLibrary = '';
-
+  constructor(private libraryListService: LibraryListService) { }
+  
   addLibrary() {
-    if (this.newLibrary) {
-      this.libraries.push(this.newLibrary);
+    if (this.newLibrary.trim()) {
+      this.libraryListService.addLibrary(this.newLibrary);
       this.newLibrary = '';
     }
+  }
+  provideLibrarysList() {
+    this.libraries = this.libraryListService.loadLibrarys();
   }
 }
