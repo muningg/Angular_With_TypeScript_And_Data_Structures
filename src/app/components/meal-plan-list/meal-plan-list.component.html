@@ -1,11 +1,16 @@
 <p>43. Meal Plan List</p>
 <input type="text" class="form-control" [(ngModel)]="newMealPlan" placeholder="Add a meal plan" />
 
-<button class="btn btn-primary mt-2" (click)="addMealPlan()">Add Meal Plan</button>
-
+<div class="row">
+  <div class="col-sm-1">
+    <button class="btn btn-primary mt-2" (click)="addMealPlan()">Add Meal Plan</button>
+  </div>
+  <div class="col-sm-1">
+    <button class="btn btn-secondary mt-2" (click)="provideMealPlansList()">Load Meal Plans</button>
+  </div>
+</div>
 <ul class="mt-3 list-group">
   <li class="list-group-item" *ngFor="let mealPlan of mealPlans">
     {{mealPlan}}
   </li>
 </ul>
-

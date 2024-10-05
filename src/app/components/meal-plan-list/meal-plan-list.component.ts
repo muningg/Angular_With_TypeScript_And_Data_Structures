@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MealPlanListService } from './meal-plan-list.service';
 
 @Component({
   selector: 'app-meal-plan-list',
@@ -6,13 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './meal-plan-list.component.css'
 })
 export class MealPlanListComponent {
-  mealPlans: string[] = ['Chicken and Rice', 'Fish and Chips', 'Salad with Grilled Chicken', 'Burger and Fries', 'Soup and Sandwich'];
+  mealPlans: string[] = [];
   newMealPlan: string = '';
-
+  constructor(private mealplanListService: MealPlanListService) { }
+  
   addMealPlan() {
     if (this.newMealPlan.trim()) {
-      this.mealPlans.push(this.newMealPlan);
+      this.mealplanListService.addMealPlan(this.newMealPlan);
       this.newMealPlan = '';
     }
+  }
+  provideMealPlansList() {
+    this.mealPlans = this.mealplanListService.loadMealPlans();
   }
 }
