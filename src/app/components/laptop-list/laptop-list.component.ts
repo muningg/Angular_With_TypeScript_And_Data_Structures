@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LaptopListService } from './laptop-list.service';
 
 @Component({
   selector: 'app-laptop-list',
@@ -6,14 +7,18 @@ import { Component } from '@angular/core';
   styleUrl: './laptop-list.component.css'
 })
 export class LaptopListComponent {
-  laptops: string[] = ['Dell', 'HP', 'Lenovo', 'Asus', 'Apple'];
+  laptops: string[] = [];
   newLaptop: string = '';
-
+  constructor(private laptopListService: LaptopListService) { }
+  
   addLaptop() {
     if (this.newLaptop.trim()) {
-      this.laptops.push(this.newLaptop);
+      this.laptopListService.addLaptop(this.newLaptop);
       this.newLaptop = '';
     }
+  }
+  provideLaptopsList() {
+    this.laptops = this.laptopListService.loadLaptops();
   }
 
 }
