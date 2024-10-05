@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PodcastListService } from './podcast-list.service';
 
 @Component({
   selector: 'app-podcast-list',
@@ -6,13 +7,18 @@ import { Component } from '@angular/core';
   styleUrl: './podcast-list.component.css'
 })
 export class PodcastListComponent {
-  podcasts: string[] = ['The Joe Rogan Experience', 'The Tim Ferriss Show', 'How I Built This', 'Radiolab', 'My Favorite Murder', 'Stuff You Should Know', 'Hardcore History', 'The GaryVee Audio Experience', 'The Model Health Show', 'The School of Greatness with Lewis Howes'];
+  podcasts: string[] = [];
   newPodcast: string = '';
 
+  constructor(private podcastListService: PodcastListService) { }
+  
   addPodcast() {
     if (this.newPodcast.trim()) {
-      this.podcasts.push(this.newPodcast);
+      this.podcastListService.addPodcast(this.newPodcast);
       this.newPodcast = '';
     }
+  }
+  providePodcastsList() {
+    this.podcasts = this.podcastListService.loadPodcasts();
   }
 }
