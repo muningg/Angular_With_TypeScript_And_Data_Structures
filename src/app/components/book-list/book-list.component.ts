@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BookListService } from './book-list.service';
 
 @Component({
   selector: 'app-book-list',
@@ -6,13 +7,18 @@ import { Component } from '@angular/core';
   styleUrl: './book-list.component.css'
 })
 export class BookListComponent {
-  books: string[] = ['Clean Code: A Handbook of Agile Software Craftsmanship', 'Introduction to Algorithms', 'Structure and Interpretation of Computer Programs (SICP)'];
+  books: string[] = [];
   newBooks: string = '';
 
-  addBooks() {
+  constructor(private booksListService: BookListService) { }
+  
+  addBook() {
     if (this.newBooks.trim()) {
-      this.books.push(this.newBooks);
+      this.booksListService.addBook(this.newBooks);
       this.newBooks = '';
     }
+  }
+  provideBooksList() {
+    this.books = this.booksListService.loadBooks();
   }
 }

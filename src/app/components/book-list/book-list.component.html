@@ -1,7 +1,13 @@
 <p>5. Books List</p>
 <input type="text" class="form-control" [(ngModel)]="newBooks" placeholder="Add a book" />
-
-<button class="btn btn-primary mt-2" (click)="addBooks()">Add Book</button>
+<div class="row">
+  <div class="col-sm-1">
+    <button class="btn btn-primary mt-2" (click)="addBook()">Add Book</button>
+  </div>
+  <div class="col-sm-1">
+    <button class="btn btn-secondary mt-2" (click)="provideBooksList()">Load Books</button>
+  </div>
+</div>
 
 <ul class="mt-3 list-group">
   <li class="list-group-item" *ngFor="let book of books">
