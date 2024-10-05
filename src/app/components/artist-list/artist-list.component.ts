@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ArtistListService } from './artist-list.service';
 
 @Component({
   selector: 'app-artist-list',
@@ -6,14 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './artist-list.component.css'
 })
 export class ArtistListComponent {
-  artists: string[] = ['Leonardo da Vinci', 'Vincent van Gogh', 'Edvard Munch', 'Michelangelo', 'Johannes Vermeer', 'Sandro Botticelli', 'Pablo Picasso', 'Paul Gauguin', 'Gustav Klimt', 'Egon Schiele'];
+  artists: string[] = [];
   newArtist: string = '';
+  constructor(private artistListService: ArtistListService) { }
 
   addArtist() {
     if (this.newArtist.trim()) {
-      this.artists.push(this.newArtist);
+      this.artistListService.addArtist(this.newArtist);
       this.newArtist = '';
     }
   }
-
+  provideArtistsList() {
+    this.artists = this.artistListService.loadArtists();
+  }
 }
