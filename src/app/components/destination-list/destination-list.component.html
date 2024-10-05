@@ -1,11 +1,16 @@
 <p>28. Destination List</p>
 <input type="text" class="form-control" [(ngModel)]="newDestination" placeholder="Add a destination" />
 
-<button class="btn btn-primary mt-2" (click)="addDestination()">Add Destination</button>
-
+<div class="row">
+  <div class="col-sm-1">
+    <button class="btn btn-primary mt-2" (click)="addDestination()">Add Destination</button>
+  </div>
+  <div class="col-sm-1">
+    <button class="btn btn-secondary mt-2" (click)="provideDestinationsList()">Load Destinations</button>
+  </div>
+</div>
 <ul class="mt-3 list-group">
   <li class="list-group-item" *ngFor="let destination of destinations">
     {{destination}}
   </li>
 </ul>
-
