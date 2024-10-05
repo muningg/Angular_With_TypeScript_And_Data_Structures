@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EventListService } from './event-list.service';
 
 @Component({
   selector: 'app-event-list',
@@ -6,13 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './event-list.component.css'
 })
 export class EventListComponent {
-  events = ['Angular Connect', 'Angular London Meetup'];
+  events = [''];
   newEvent = '';
+  constructor(private eventListService: EventListService) { }
 
   addEvent() {
-    if (this.newEvent) {
-      this.events.push(this.newEvent);
+    if (this.newEvent.trim()) {
+      this.eventListService.addEvent(this.newEvent);
       this.newEvent = '';
     }
+  }
+  provideEventsList() {
+    this.events = this.eventListService.loadEvents();
   }
 }
