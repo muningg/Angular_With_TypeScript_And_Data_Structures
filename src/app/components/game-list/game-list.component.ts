@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GameListService } from './game-list.service';
 
 @Component({
   selector: 'app-game-list',
@@ -6,13 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './game-list.component.css'
 })
 export class GameListComponent {
-  games: string[] = ['The Legend of Zelda', 'God of War', 'Uncharted', 'Resident Evil', 'Final Fantasy', 'Grand Theft Auto', 'Call of Duty', 'Assassins Creed', 'Halo', 'Diablo'];
+  games: string[] = [];
   newGame: string = '';
-
+  constructor(private gameListService: GameListService) { }
+  
   addGame() {
     if (this.newGame.trim()) {
-      this.games.push(this.newGame);
+      this.gameListService.addGame(this.newGame);
       this.newGame = '';
     }
+  }
+  provideGamesList() {
+    this.games = this.gameListService.loadGames();
   }
 }
