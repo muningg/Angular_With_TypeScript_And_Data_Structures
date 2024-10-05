@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { VegetableListService } from './vegetable-list.service';
 
 @Component({
   selector: 'app-vegetable-list',
@@ -6,13 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './vegetable-list.component.css'
 })
 export class VegetableListComponent {
-  vegetables: string[] = ['Lettuce', 'Tomato', 'Cucumber', 'Carrot', 'Cabbage'];
+  vegetables: string[] = [];
   newVegetable: string = '';
-
+  constructor(private vegetableListService: VegetableListService) { }
+  
   addVegetable() {
     if (this.newVegetable.trim()) {
-      this.vegetables.push(this.newVegetable);
+      this.vegetableListService.addVegetable(this.newVegetable);
       this.newVegetable = '';
     }
+  }
+  provideVegetablesList() {
+    this.vegetables = this.vegetableListService.loadVegetables();
   }
 }
